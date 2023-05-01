@@ -1,13 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { RootState } from "../store";
 
-interface InfoModalState {
-  value: boolean;
-}
 
 export const modalSlice = createSlice({
   name: "infoModal",
-  initialState: { info: false , privacy: false, option: false},
+  initialState: { info: false , privacy: false, option: false, error: false},
   reducers: {
     showInfoModal: (state) => {
       state.info = true;
@@ -27,11 +24,26 @@ export const modalSlice = createSlice({
     closeOptionModal: (state) => {
       state.option = false;
     },
+    showErrorModal: (state) => {
+      state.error = true;
+    },
+    closeErrorModal: (state) => {
+      state.error = false;
+    },
 
   },
 });
 
-export const { showInfoModal, closeInfoModal, showOptionModal, closeOptionModal, showPrivacyModal, closePrivacyModal } = modalSlice.actions;
+export const {
+  showInfoModal,
+  closeInfoModal,
+  showOptionModal,
+  closeOptionModal,
+  showPrivacyModal,
+  closePrivacyModal,
+  showErrorModal,
+  closeErrorModal,
+} = modalSlice.actions;
 
 
 export default modalSlice.reducer;
