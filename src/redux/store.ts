@@ -2,15 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 
 import modalReducer from "./features/Modal";
 import scoreReducer from "./features/Scores";
-import englishTextReducer from "./features/English";
-import japaneseTextReducer from "./features/Japanese";
+import gameReducer from "./features/Game";
 
 export const store = configureStore({
   reducer: {
     modal: modalReducer,
     score: scoreReducer,
-    englishText: englishTextReducer,
-    japaneseText: japaneseTextReducer,
+    game: gameReducer,
   },
 });
 
