@@ -34,6 +34,7 @@ const TTimer = () => {
           router.push("/score");
         } else {
           dispatch(addCurrentTextIndex(1));
+          dispatch(setCurrentCharIndex(0));
         }
       } else {
         dispatch(subTimer());
