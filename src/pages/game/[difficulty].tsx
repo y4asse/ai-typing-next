@@ -49,15 +49,18 @@ const Game = (props: Props) => {
 
   return (
     <>
-      {!gameStart ? <Start setGameStart={setGameStart} /> : <></>}
-      <div className="container">
-        <div className="gameGrid">
-          <TTitle difficulty={difficulty} />
-          <TScore />
-          <TText difficulty={difficulty} />
-          <TTimer />
+      {!gameStart ? (
+        <Start setGameStart={setGameStart} />
+      ) : (
+        <div className="container">
+          <div className="gameGrid">
+            <TTitle difficulty={difficulty} />
+            <TScore />
+            <TText difficulty={difficulty} />
+            <TTimer />
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 };
