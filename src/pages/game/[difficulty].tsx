@@ -68,6 +68,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   query,
   res,
 }) => {
+  console.log(process.env.OPENAI_API_KEY);
   const { difficulty } = query;
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
