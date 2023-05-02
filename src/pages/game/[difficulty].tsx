@@ -35,7 +35,6 @@ const Game = (props: Props) => {
   const difficulty = props.difficulty;
   const data = props.data.content;
   const [gameStart, setGameStart] = useState(false);
-
   const firstSplitArray = data.split(")");
   firstSplitArray.pop();
   for (let i = 0; i < firstSplitArray.length; i++) {
