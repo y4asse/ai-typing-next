@@ -20,7 +20,7 @@ export default function Home() {
       <div className="container">
         <div className="title">
           <h1>AI Typing</h1>
-          <p>全ての文はAIが作成!</p>
+            <p>GPTが文を生成！</p>
         </div>
         <div className="buttonContainer">
           <button
