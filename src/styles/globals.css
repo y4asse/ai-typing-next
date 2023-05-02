@@ -200,19 +200,13 @@ button.reverse {
   height: 40px;
   margin-top: 60px;
   background-color: rgb(213, 213, 213);
+  font-size: 30px;
   padding: 4px;
+  position: relative;
   border-radius: 10px;
 }
 
-.gameTimerInner {
-  height: 100%;
-  border-radius: 10px;
-  background-color: royalblue;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-}
+
 
 .english {
   display: flex;

@@ -65,7 +65,7 @@ const Start = ({setGameStart}: {setGameStart: Dispatch<boolean>}) => {
 
 export default Start;
 
-const rotate = keyframes`
+export const rotate = keyframes`
   0%{
     transform: rotateY(0);
     opacity: 0;
@@ -84,7 +84,7 @@ const rotate = keyframes`
   }
 `;
 
-export const CountSpan = styled.h1`
+const CountSpan = styled.h1`
   font-size: 100px;
   padding: 50px;
   animation: ${rotate} 1s infinite;
