@@ -4,7 +4,6 @@ import TScore from "../components/typing/TScore";
 import TText from "../components/typing/TText";
 import TTimer from "../components/typing/TTimer";
 import { GetServerSideProps, GetStaticPaths, GetStaticProps } from "next";
-import axios from "axios";
 import { Configuration, OpenAIApi } from "openai";
 import { useDispatch } from "react-redux";
 import { clearScore } from "@/redux/features/Scores";
@@ -68,9 +67,15 @@ export default Game;
 
 export const getServerSideProps: GetServerSideProps = async ({
   query,
-  res,
 }) => {
   const { difficulty } = query;
+  if (
+    difficulty !== "easy" &&
+    difficulty !== "normal" &&
+    difficulty !== "hard"
+  ) {
+    return { notFound: true };
+  }
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
   });
@@ -78,8 +83,8 @@ export const getServerSideProps: GetServerSideProps = async ({
   let content = "";
   switch (difficulty) {
     case "easy":
-      content =
-        "色々な単語をランダムでを7個教えて.ただしを「-」をつけずに，1. 英単語(日本語訳)の形式で返して，余分な記号で囲わないでください．また，例文などの余計なことは書かないでください．";
+      content ="hello"
+        // "色々な単語をランダムでを7個教えて.ただしを「-」をつけずに，1. 英単語(日本語訳)の形式で返して，余分な記号で囲わないでください．また，例文などの余計なことは書かないでください．";
       break;
     case "normal":
       content =
