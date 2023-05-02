@@ -65,9 +65,7 @@ const Game = (props: Props) => {
 
 export default Game;
 
-export const getServerSideProps: GetServerSideProps = async ({
-  query,
-}) => {
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
   const { difficulty } = query;
   if (
     difficulty !== "easy" &&
@@ -83,8 +81,8 @@ export const getServerSideProps: GetServerSideProps = async ({
   let content = "";
   switch (difficulty) {
     case "easy":
-      content ="hello"
-        // "色々な単語をランダムでを7個教えて.ただしを「-」をつけずに，1. 英単語(日本語訳)の形式で返して，余分な記号で囲わないでください．また，例文などの余計なことは書かないでください．";
+      content =
+        "色々な単語をランダムでを7個教えて.ただしを「-」をつけずに，1. 英単語(日本語訳)の形式で返して，余分な記号で囲わないでください．また，例文などの余計なことは書かないでください．";
       break;
     case "normal":
       content =
