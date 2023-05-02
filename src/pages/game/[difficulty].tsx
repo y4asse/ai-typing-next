@@ -71,7 +71,6 @@ export const getServerSideProps: GetServerSideProps = async ({
   query,
   res,
 }) => {
-  console.log(process.env.OPENAI_API_KEY);
   const { difficulty } = query;
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
@@ -81,7 +80,7 @@ export const getServerSideProps: GetServerSideProps = async ({
   switch (difficulty) {
     case "easy":
       content =
-        "色々な単語をランダムでを7個教えて.ただしを「-」をつけずに，英単語(日本語訳)の形式で返して，余分な記号で囲わないでください．また，例文などの余計なことは書かないでください．";
+        "色々な単語をランダムでを7個教えて.ただしを「-」をつけずに，1. 英単語(日本語訳)の形式で返して，余分な記号で囲わないでください．また，例文などの余計なことは書かないでください．";
       break;
     case "normal":
       content =
