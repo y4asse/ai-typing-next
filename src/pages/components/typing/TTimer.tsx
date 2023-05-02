@@ -9,6 +9,8 @@ import { subScore } from "@/redux/features/Scores";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
+import styled, { keyframes } from "styled-components";
+import { rotate } from "../start";
 
 const TTimer = () => {
   const router = useRouter();
@@ -45,14 +47,39 @@ const TTimer = () => {
     };
   }, [timer, currentTextIndex]);
 
-
   return (
     <div className="gameTimer">
-      <div className="gameTimerInner">
-        <span>{timer}</span>
-      </div>
+      <GameTimerInnner key={currentTextIndex}>
+        <Count key={currentTextIndex}>{timer}</Count>
+      </GameTimerInnner>
     </div>
   );
 };
 
 export default TTimer;
+
+const countdownAnimation = keyframes`
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+`;
+
+const GameTimerInnner = styled.div`
+  height: 100%;
+  border-radius: 10px;
+  background-color: royalblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: ${countdownAnimation} 10s linear infinite;
+`;
+
+const Count = styled.span`
+  animation: ${rotate} 1s infinite;
+  position: absolute;
+  top: 0;
+  left: 49%;
+`;
