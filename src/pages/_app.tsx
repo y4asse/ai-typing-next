@@ -4,17 +4,20 @@ import Layout from "./components/layout";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
 import Head from "next/head";
+import Identify from "./components/Identify";
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
-    <Head>
-      <title>AI Typing</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+      <Head>
+        <title>AI Typing</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <Provider store={store}>
         <Layout>
-          <Component {...pageProps} />
+          <Identify>
+            <Component {...pageProps} />
+          </Identify>
         </Layout>
       </Provider>
     </>
