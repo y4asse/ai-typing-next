@@ -14,11 +14,11 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Provider store={store}>
-        <Layout>
-          <Identify>
+        <Identify>
+          <Layout>
             <Component {...pageProps} />
-          </Identify>
-        </Layout>
+          </Layout>
+        </Identify>
       </Provider>
     </>
   );
