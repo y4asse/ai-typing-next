@@ -6,6 +6,12 @@ const InfoModal: FC = () => {
   const dispatch = useAppDispatch();
   return (
     <div className="modal">
+      <span
+        className="batsu"
+        onClick={() => {
+          dispatch(closeInfoModal());
+        }}
+      ></span>
       <h3>遊び方</h3>
       <p>
         ゲームを開始するとAIが自動で7つテキストを生成してくれます.
