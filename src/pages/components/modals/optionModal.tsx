@@ -6,6 +6,12 @@ const OptionModal: FC = () => {
   const dispatch = useAppDispatch();
   return (
     <div className="modal">
+      <span
+        className="batsu"
+        onClick={() => {
+          dispatch(closeOptionModal());
+        }}
+      ></span>
       <h2>準備中</h2>
       <button
         className="button small2 reverse"

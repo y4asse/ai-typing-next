@@ -3,8 +3,9 @@ import { useRouter } from "next/router";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
 import { showInfoModal, showOptionModal } from "@/redux/features/Modal";
 import InfoModal from "./components/modals/infoModal";
-import PrivacyModal from "./components/modals/privacyModal";
 import OptionModal from "./components/modals/optionModal";
+import Image from "next/image";
+import imageSrc from "./image/OIG.jpg"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,8 +20,15 @@ export default function Home() {
       {optionModalOpen && <OptionModal />}
       <div className="container">
         <div className="title">
+          <Image
+            src={imageSrc}
+            width={70}
+            height={70}
+            alt="Icon"
+            style={{borderRadius: "40%"}}
+          />
           <h1>AI Typing</h1>
-            <p>GPTが文を生成！</p>
+          <p>GPTが文を生成！</p>
         </div>
         <div className="buttonContainer">
           <button

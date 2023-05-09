@@ -6,6 +6,12 @@ const PrivacyModal: FC = () => {
   const dispatch = useAppDispatch();
   return (
     <div className="modal">
+      <span
+        className="batsu"
+        onClick={() => {
+          dispatch(closePrivacyModal());
+        }}
+      ></span>
       <h2>プライバシーポリシー</h2>
       <h4>
         ・当サイト（タイピングゲーム）では、ユーザーの個人情報やユーザー情報を収集・利用しておりません。
@@ -40,7 +46,7 @@ const PrivacyModal: FC = () => {
         </a>
       </p>
       <button
-      className="button small2 reverse"
+        className="button small2 reverse"
         onClick={() => {
           dispatch(closePrivacyModal());
         }}
